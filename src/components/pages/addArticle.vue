@@ -162,7 +162,7 @@ export default {
           {required: true, message: '请输入文章标题', trigger: 'blur'}
         ],
         article_desc: [
-          {required: true, message: '请输入文章描述', trigger: 'blur'},
+          {required: false, message: '请输入文章描述', trigger: 'blur'},
           {min: 1, max: 100, message: '长度在 100 个字符内', trigger: 'blur'}
         ],
         // video_title: [
@@ -192,7 +192,7 @@ export default {
           {required: true, message: '请选择所属课程', trigger: 'change'}
         ],
         article_pic: [
-          {required: true, message: '请选择文章图片', trigger: 'change'}
+          {required: false, message: '请选择文章图片', trigger: 'change'}
         ],
         // audio_size: [
         //   {required: false, trigger: 'change'},

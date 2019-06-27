@@ -1,9 +1,9 @@
 <template>
-  <div class="addArticle" v-loading="loading"  element-loading-text="拼命加载中"
+  <div class="addArticle" v-loading="loading" element-loading-text="拼命加载中"
        element-loading-spinner="el-icon-loading"
-      >
+  >
     <h1 class="title">添加新闻</h1>
-    <el-form  :model="articleinfo" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
+    <el-form :model="articleinfo" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
       <!--<el-form-item label="作者：" prop="author_id">-->
       <!--<el-select v-model="articleinfo.author_id" placeholder="请选择作者" @change="handleAuthorChange">-->
       <!--<el-option v-for="item in authorList" :value="item.author_id" :label="item.author_name"-->
@@ -81,12 +81,12 @@
       <!--</el-form-item></div>-->
       <el-form-item label="视频地址：" prop="video_url">
         <input type="file" ref="uploadVideo"/>
-        <input type="button" value="提交" @click="handleUploadVideo" />
+        <input type="button" value="提交" @click="handleUploadVideo"/>
         <el-input v-model="articleinfo.video_url"></el-input>
       </el-form-item>
       <el-form-item label="音频地址：" prop="audio_url">
         <input type="file" ref="uploadAudio"/>
-        <input type="button" value="提交" @click="handleUploadAudio" />
+        <input type="button" value="提交" @click="handleUploadAudio"/>
         <el-input v-model="articleinfo.audio_url"></el-input>
       </el-form-item>
       <div class="audioBoxBox">
@@ -107,7 +107,7 @@
         </el-form-item>
       </div>
 
-      <el-form-item label="发布时间：" >
+      <el-form-item label="发布时间：">
         <el-date-picker
           v-model="articleinfo.publish_time"
           type="datetime"
@@ -135,7 +135,14 @@ import tinEdite from '../../components/common/editor.vue'
 
 // import '../../../static/lib/langs/zh_CN.js'
 import E from 'wangeditor'
-import {getCourse, uploadImage, uploadAudio, uploadVideo, uploadNewsForm, duplicateDetectionNews} from '../../api/index'
+import {
+  getCourse,
+  uploadImage,
+  uploadAudio,
+  uploadVideo,
+  uploadNewsForm,
+  duplicateDetectionNews
+} from '../../api/index'
 
 export default {
   name: 'addNews',
